@@ -1,4 +1,7 @@
-﻿Public Class frmLectores
+﻿Imports System.Data.SqlClient
+
+Public Class frmLectores
+
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
         Close()
     End Sub
@@ -18,11 +21,31 @@
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         panelDatos.Visible = True
+        btnGuardar.Enabled = True
+        btnModificar.Enabled = False
+        txtIdentidad.Focus()
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Limpiar()
+        btnGuardar.Enabled = True
+        btnModificar.Enabled = True
+        panelDatos.Visible = False
     End Sub
 
     Private Sub panelTitulo_MouseUp(sender As Object, e As MouseEventArgs) Handles panelTitulo.MouseUp
         Arrastre = False
     End Sub
+
+    Private Sub Limpiar()
+        txtIdentidad.Clear()
+        txtNombre.Clear()
+        txtTelefono.Clear()
+        txtDireccion.Clear()
+        txtObservaciones.Clear()
+        txtIdentidad.Focus()
+    End Sub
+
     '<a href = "https://www.flaticon.es/iconos-gratis/buscar" title="buscar iconos">Buscar iconos creados por inkubators - Flaticon</a>
     '<a href="https://www.flaticon.es/iconos-gratis/mas" title="más iconos">Más iconos creados por Smashicons - Flaticon</a>
     '<a href="https://www.flaticon.es/iconos-gratis/mas" title="mas iconos">Mas iconos creados por Pixel Buddha - Flaticon</a>
