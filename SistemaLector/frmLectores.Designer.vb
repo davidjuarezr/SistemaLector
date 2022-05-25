@@ -27,17 +27,34 @@ Partial Class frmLectores
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.panelBusqueda = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.panelContenido = New System.Windows.Forms.Panel()
+        Me.panelDatos = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.txtObservaciones = New System.Windows.Forms.TextBox()
+        Me.lblObservaciones = New System.Windows.Forms.Label()
+        Me.txtDireccion = New System.Windows.Forms.TextBox()
+        Me.lblDireccion = New System.Windows.Forms.Label()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.lblTelefono = New System.Windows.Forms.Label()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.lblNombre = New System.Windows.Forms.Label()
+        Me.txtIdentidad = New System.Windows.Forms.TextBox()
+        Me.lblIdentidad = New System.Windows.Forms.Label()
+        Me.dataLectores = New System.Windows.Forms.DataGridView()
         Me.panelLateral = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.btnNuevo = New System.Windows.Forms.PictureBox()
         Me.panelTitulo.SuspendLayout()
         Me.panelBusqueda.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelContenido.SuspendLayout()
+        Me.panelDatos.SuspendLayout()
+        CType(Me.dataLectores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelLateral.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnNuevo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'panelTitulo
@@ -48,7 +65,7 @@ Partial Class frmLectores
         Me.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelTitulo.Location = New System.Drawing.Point(0, 0)
         Me.panelTitulo.Name = "panelTitulo"
-        Me.panelTitulo.Size = New System.Drawing.Size(614, 54)
+        Me.panelTitulo.Size = New System.Drawing.Size(564, 54)
         Me.panelTitulo.TabIndex = 0
         '
         'btnCerrar
@@ -57,7 +74,7 @@ Partial Class frmLectores
         Me.btnCerrar.FlatAppearance.BorderSize = 0
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.btnCerrar.Location = New System.Drawing.Point(567, 2)
+        Me.btnCerrar.Location = New System.Drawing.Point(514, 2)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(47, 51)
         Me.btnCerrar.TabIndex = 1
@@ -82,8 +99,16 @@ Partial Class frmLectores
         Me.panelBusqueda.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelBusqueda.Location = New System.Drawing.Point(0, 54)
         Me.panelBusqueda.Name = "panelBusqueda"
-        Me.panelBusqueda.Size = New System.Drawing.Size(614, 48)
+        Me.panelBusqueda.Size = New System.Drawing.Size(564, 48)
         Me.panelBusqueda.TabIndex = 1
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtBuscar.Location = New System.Drawing.Point(61, 11)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(460, 26)
+        Me.txtBuscar.TabIndex = 3
         '
         'PictureBox1
         '
@@ -95,48 +120,220 @@ Partial Class frmLectores
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
-        'txtBuscar
-        '
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtBuscar.Location = New System.Drawing.Point(61, 11)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(506, 26)
-        Me.txtBuscar.TabIndex = 3
-        '
         'panelContenido
         '
         Me.panelContenido.BackColor = System.Drawing.Color.White
+        Me.panelContenido.Controls.Add(Me.panelDatos)
+        Me.panelContenido.Controls.Add(Me.dataLectores)
         Me.panelContenido.Controls.Add(Me.panelLateral)
         Me.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelContenido.Location = New System.Drawing.Point(0, 102)
         Me.panelContenido.Name = "panelContenido"
-        Me.panelContenido.Size = New System.Drawing.Size(614, 349)
+        Me.panelContenido.Size = New System.Drawing.Size(564, 346)
         Me.panelContenido.TabIndex = 2
+        '
+        'panelDatos
+        '
+        Me.panelDatos.Controls.Add(Me.Button2)
+        Me.panelDatos.Controls.Add(Me.Button1)
+        Me.panelDatos.Controls.Add(Me.btnGuardar)
+        Me.panelDatos.Controls.Add(Me.txtObservaciones)
+        Me.panelDatos.Controls.Add(Me.lblObservaciones)
+        Me.panelDatos.Controls.Add(Me.txtDireccion)
+        Me.panelDatos.Controls.Add(Me.lblDireccion)
+        Me.panelDatos.Controls.Add(Me.txtTelefono)
+        Me.panelDatos.Controls.Add(Me.lblTelefono)
+        Me.panelDatos.Controls.Add(Me.txtNombre)
+        Me.panelDatos.Controls.Add(Me.lblNombre)
+        Me.panelDatos.Controls.Add(Me.txtIdentidad)
+        Me.panelDatos.Controls.Add(Me.lblIdentidad)
+        Me.panelDatos.Location = New System.Drawing.Point(0, 1)
+        Me.panelDatos.Name = "panelDatos"
+        Me.panelDatos.Size = New System.Drawing.Size(563, 345)
+        Me.panelDatos.TabIndex = 1
+        Me.panelDatos.Visible = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(194, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Cambria", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(312, 291)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(126, 43)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Cancelar"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(194, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Cambria", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(169, 290)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(126, 43)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Modificar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(209, Byte), Integer), CType(CType(55, Byte), Integer))
+        Me.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnGuardar.FlatAppearance.BorderSize = 0
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGuardar.Font = New System.Drawing.Font("Cambria", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btnGuardar.ForeColor = System.Drawing.Color.White
+        Me.btnGuardar.Location = New System.Drawing.Point(26, 291)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(126, 43)
+        Me.btnGuardar.TabIndex = 2
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = False
+        '
+        'txtObservaciones
+        '
+        Me.txtObservaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtObservaciones.Location = New System.Drawing.Point(148, 216)
+        Me.txtObservaciones.Multiline = True
+        Me.txtObservaciones.Name = "txtObservaciones"
+        Me.txtObservaciones.Size = New System.Drawing.Size(373, 60)
+        Me.txtObservaciones.TabIndex = 1
+        '
+        'lblObservaciones
+        '
+        Me.lblObservaciones.AutoSize = True
+        Me.lblObservaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblObservaciones.Location = New System.Drawing.Point(10, 219)
+        Me.lblObservaciones.Name = "lblObservaciones"
+        Me.lblObservaciones.Size = New System.Drawing.Size(114, 20)
+        Me.lblObservaciones.TabIndex = 0
+        Me.lblObservaciones.Text = "Observaciones"
+        '
+        'txtDireccion
+        '
+        Me.txtDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtDireccion.Location = New System.Drawing.Point(148, 139)
+        Me.txtDireccion.Multiline = True
+        Me.txtDireccion.Name = "txtDireccion"
+        Me.txtDireccion.Size = New System.Drawing.Size(373, 60)
+        Me.txtDireccion.TabIndex = 1
+        '
+        'lblDireccion
+        '
+        Me.lblDireccion.AutoSize = True
+        Me.lblDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblDireccion.Location = New System.Drawing.Point(10, 142)
+        Me.lblDireccion.Name = "lblDireccion"
+        Me.lblDireccion.Size = New System.Drawing.Size(75, 20)
+        Me.lblDireccion.TabIndex = 0
+        Me.lblDireccion.Text = "Dirección"
+        '
+        'txtTelefono
+        '
+        Me.txtTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtTelefono.Location = New System.Drawing.Point(148, 98)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(373, 26)
+        Me.txtTelefono.TabIndex = 1
+        '
+        'lblTelefono
+        '
+        Me.lblTelefono.AutoSize = True
+        Me.lblTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblTelefono.Location = New System.Drawing.Point(10, 101)
+        Me.lblTelefono.Name = "lblTelefono"
+        Me.lblTelefono.Size = New System.Drawing.Size(91, 20)
+        Me.lblTelefono.TabIndex = 0
+        Me.lblTelefono.Text = "N° Telefono"
+        '
+        'txtNombre
+        '
+        Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtNombre.Location = New System.Drawing.Point(148, 58)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(373, 26)
+        Me.txtNombre.TabIndex = 1
+        '
+        'lblNombre
+        '
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblNombre.Location = New System.Drawing.Point(10, 61)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(137, 20)
+        Me.lblNombre.TabIndex = 0
+        Me.lblNombre.Text = "Nombre Completo"
+        '
+        'txtIdentidad
+        '
+        Me.txtIdentidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtIdentidad.Location = New System.Drawing.Point(148, 17)
+        Me.txtIdentidad.Name = "txtIdentidad"
+        Me.txtIdentidad.Size = New System.Drawing.Size(373, 26)
+        Me.txtIdentidad.TabIndex = 1
+        '
+        'lblIdentidad
+        '
+        Me.lblIdentidad.AutoSize = True
+        Me.lblIdentidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblIdentidad.Location = New System.Drawing.Point(10, 20)
+        Me.lblIdentidad.Name = "lblIdentidad"
+        Me.lblIdentidad.Size = New System.Drawing.Size(96, 20)
+        Me.lblIdentidad.TabIndex = 0
+        Me.lblIdentidad.Text = "N° Identidad"
+        '
+        'dataLectores
+        '
+        Me.dataLectores.AllowUserToAddRows = False
+        Me.dataLectores.AllowUserToDeleteRows = False
+        Me.dataLectores.AllowUserToResizeColumns = False
+        Me.dataLectores.BackgroundColor = System.Drawing.Color.White
+        Me.dataLectores.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dataLectores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.dataLectores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataLectores.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dataLectores.EnableHeadersVisualStyles = False
+        Me.dataLectores.Location = New System.Drawing.Point(0, 0)
+        Me.dataLectores.Name = "dataLectores"
+        Me.dataLectores.RowHeadersVisible = False
+        Me.dataLectores.RowTemplate.Height = 25
+        Me.dataLectores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dataLectores.Size = New System.Drawing.Size(450, 346)
+        Me.dataLectores.TabIndex = 1
         '
         'panelLateral
         '
-        Me.panelLateral.Controls.Add(Me.PictureBox2)
+        Me.panelLateral.Controls.Add(Me.btnNuevo)
         Me.panelLateral.Dock = System.Windows.Forms.DockStyle.Right
-        Me.panelLateral.Location = New System.Drawing.Point(500, 0)
+        Me.panelLateral.Location = New System.Drawing.Point(450, 0)
         Me.panelLateral.Name = "panelLateral"
-        Me.panelLateral.Size = New System.Drawing.Size(114, 349)
+        Me.panelLateral.Size = New System.Drawing.Size(114, 346)
         Me.panelLateral.TabIndex = 0
         '
-        'PictureBox2
+        'btnNuevo
         '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(0, 81)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(114, 114)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 0
-        Me.PictureBox2.TabStop = False
+        Me.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNuevo.Image = CType(resources.GetObject("btnNuevo.Image"), System.Drawing.Image)
+        Me.btnNuevo.Location = New System.Drawing.Point(0, 81)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(114, 114)
+        Me.btnNuevo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btnNuevo.TabIndex = 0
+        Me.btnNuevo.TabStop = False
         '
         'frmLectores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(614, 451)
+        Me.ClientSize = New System.Drawing.Size(564, 448)
         Me.Controls.Add(Me.panelContenido)
         Me.Controls.Add(Me.panelBusqueda)
         Me.Controls.Add(Me.panelTitulo)
@@ -150,8 +347,11 @@ Partial Class frmLectores
         Me.panelBusqueda.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelContenido.ResumeLayout(False)
+        Me.panelDatos.ResumeLayout(False)
+        Me.panelDatos.PerformLayout()
+        CType(Me.dataLectores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelLateral.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnNuevo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -164,5 +364,20 @@ Partial Class frmLectores
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents panelContenido As Panel
     Friend WithEvents panelLateral As Panel
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents btnNuevo As PictureBox
+    Friend WithEvents dataLectores As DataGridView
+    Friend WithEvents panelDatos As Panel
+    Friend WithEvents txtObservaciones As TextBox
+    Friend WithEvents lblObservaciones As Label
+    Friend WithEvents txtDireccion As TextBox
+    Friend WithEvents lblDireccion As Label
+    Friend WithEvents txtTelefono As TextBox
+    Friend WithEvents lblTelefono As Label
+    Friend WithEvents txtNombre As TextBox
+    Friend WithEvents lblNombre As Label
+    Friend WithEvents txtIdentidad As TextBox
+    Friend WithEvents lblIdentidad As Label
+    Friend WithEvents btnGuardar As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
 End Class
