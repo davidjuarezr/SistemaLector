@@ -47,6 +47,7 @@ Partial Class frmLectores
         Me.dataLectores = New System.Windows.Forms.DataGridView()
         Me.panelLateral = New System.Windows.Forms.Panel()
         Me.btnNuevo = New System.Windows.Forms.PictureBox()
+        Me.Eliminar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.panelTitulo.SuspendLayout()
         Me.panelBusqueda.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -299,6 +300,7 @@ Partial Class frmLectores
         Me.dataLectores.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dataLectores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dataLectores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dataLectores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Eliminar})
         Me.dataLectores.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dataLectores.Location = New System.Drawing.Point(0, 0)
         Me.dataLectores.Name = "dataLectores"
@@ -327,6 +329,13 @@ Partial Class frmLectores
         Me.btnNuevo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btnNuevo.TabIndex = 0
         Me.btnNuevo.TabStop = False
+        '
+        'Eliminar
+        '
+        Me.Eliminar.HeaderText = ""
+        Me.Eliminar.Image = CType(resources.GetObject("Eliminar.Image"), System.Drawing.Image)
+        Me.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.Eliminar.Name = "Eliminar"
         '
         'frmLectores
         '
@@ -379,4 +388,5 @@ Partial Class frmLectores
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnCancelar As Button
     Friend WithEvents btnModificar As Button
+    Friend WithEvents Eliminar As DataGridViewImageColumn
 End Class

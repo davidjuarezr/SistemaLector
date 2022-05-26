@@ -91,11 +91,12 @@ Public Class frmLectores
             Cerrar_conexion()
 
             'cambiar ancho de las columnas(encabezados)
-            dataLectores.Columns(0).Width = 180
-            dataLectores.Columns(1).Width = 250
-            dataLectores.Columns(2).Width = 100
-            dataLectores.Columns(3).Width = 300
+            dataLectores.Columns(0).Width = 35
+            dataLectores.Columns(1).Width = 120
+            dataLectores.Columns(2).Width = 250
+            dataLectores.Columns(3).Width = 100
             dataLectores.Columns(4).Width = 300
+            dataLectores.Columns(5).Width = 300
 
             'Cambiar apariencia de los encabezados
             dataLectores.EnableHeadersVisualStyles = False
@@ -125,11 +126,12 @@ Public Class frmLectores
             Cerrar_conexion()
 
             'cambiar ancho de las columnas(encabezados)
-            dataLectores.Columns(0).Width = 180
-            dataLectores.Columns(1).Width = 250
-            dataLectores.Columns(2).Width = 100
-            dataLectores.Columns(3).Width = 300
+            dataLectores.Columns(0).Width = 35
+            dataLectores.Columns(1).Width = 120
+            dataLectores.Columns(2).Width = 250
+            dataLectores.Columns(3).Width = 100
             dataLectores.Columns(4).Width = 300
+            dataLectores.Columns(5).Width = 300
 
             'Cambiar apariencia de los encabezados
             dataLectores.EnableHeadersVisualStyles = False
@@ -148,11 +150,11 @@ Public Class frmLectores
         panelDatos.Visible = True
 
         Try
-            txtIdentidad.Text = dataLectores.SelectedCells.Item(0).Value
-            txtNombre.Text = dataLectores.SelectedCells.Item(1).Value
-            txtTelefono.Text = dataLectores.SelectedCells.Item(2).Value
-            txtDireccion.Text = dataLectores.SelectedCells.Item(3).Value
-            txtObservaciones.Text = dataLectores.SelectedCells.Item(4).Value
+            txtIdentidad.Text = dataLectores.SelectedCells.Item(1).Value
+            txtNombre.Text = dataLectores.SelectedCells.Item(2).Value
+            txtTelefono.Text = dataLectores.SelectedCells.Item(3).Value
+            txtDireccion.Text = dataLectores.SelectedCells.Item(4).Value
+            txtObservaciones.Text = dataLectores.SelectedCells.Item(5).Value
 
             btnGuardar.Enabled = False
             btnModificar.Enabled = True
@@ -194,6 +196,31 @@ Public Class frmLectores
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         Buscar()
         panelDatos.Visible = False
+    End Sub
+
+    Private Sub dataLectores_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataLectores.CellContentClick
+        'Verificar si se ha dado clic sobre la colmna de eliminar
+        If e.ColumnIndex = dataLectores.Columns.Item("Eliminar").Index Then
+            Dim result As DialogResult
+
+            result = MsgBox("El registro será eliminado permanentemente del sistema y ya no podrá acceder a los datos de este lector. ¿Realmente desea eliminar este registro?", vbQuestion + vbOKCancel, "Sistema Lectores")
+            If result = DialogResult.OK Then
+                Dim cmd As SqlCommand
+                Try
+                    Abrir_conexion()
+                    cmd = New SqlCommand("Eliminar_Lector", conexion)
+                    cmd.CommandType = 4
+                    cmd.Parameters.AddWithValue("@idLector", dataLectores.SelectedCells.Item(1).Value)
+                    cmd.ExecuteNonQuery()
+                    Cerrar_conexion()
+                    Mostrar()
+                Catch ex As Exception
+
+                End Try
+            Else
+                MsgBox("Eliminación cancelada, el registro no será eliminado", vbInformation + vbOKOnly, "Sistema Lectores")
+            End If
+        End If
     End Sub
 
 
