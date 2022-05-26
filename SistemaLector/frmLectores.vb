@@ -37,6 +37,35 @@ Public Class frmLectores
         Arrastre = False
     End Sub
 
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim cmd As New SqlCommand
+
+        If txtNombre.Text <> "" And txtIdentidad.Text <> "" Then
+            Try
+                Abrir_conexion()
+                cmd = New SqlCommand("Insertar_Lector", conexion)
+                cmd.CommandType = 4
+
+                cmd.Parameters.AddWithValue("@IdLector", txtIdentidad.Text.ToString)
+                cmd.Parameters.AddWithValue("@Nombre", txtNombre.Text.ToString)
+                cmd.Parameters.AddWithValue("@Telefono", txtTelefono.Text)
+                cmd.Parameters.AddWithValue("@Direccion", txtDireccion.Text.ToString)
+                cmd.Parameters.AddWithValue("@Observaciones", txtObservaciones.Text.ToString)
+                cmd.ExecuteNonQuery()
+
+                Cerrar_conexion()
+
+                panelDatos.Visible = False
+                Limpiar()
+
+            Catch ex As Exception
+
+            End Try
+        Else
+            MsgBox("Los campos Numero de Identidad y Nombre, son obligatorios", vbInformation + vbOK, "Sistema Letores")
+        End If
+    End Sub
+
     Private Sub Limpiar()
         txtIdentidad.Clear()
         txtNombre.Clear()

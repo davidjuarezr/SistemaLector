@@ -108,7 +108,7 @@ Partial Class frmLectores
         Me.txtBuscar.Location = New System.Drawing.Point(61, 11)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(460, 26)
-        Me.txtBuscar.TabIndex = 3
+        Me.txtBuscar.TabIndex = 0
         '
         'PictureBox1
         '
@@ -164,7 +164,7 @@ Partial Class frmLectores
         Me.btnCancelar.Location = New System.Drawing.Point(312, 291)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(126, 43)
-        Me.btnCancelar.TabIndex = 2
+        Me.btnCancelar.TabIndex = 8
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = False
         '
@@ -179,7 +179,7 @@ Partial Class frmLectores
         Me.btnModificar.Location = New System.Drawing.Point(169, 290)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(126, 43)
-        Me.btnModificar.TabIndex = 2
+        Me.btnModificar.TabIndex = 7
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = False
         '
@@ -194,7 +194,7 @@ Partial Class frmLectores
         Me.btnGuardar.Location = New System.Drawing.Point(26, 291)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(126, 43)
-        Me.btnGuardar.TabIndex = 2
+        Me.btnGuardar.TabIndex = 6
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = False
         '
@@ -205,7 +205,7 @@ Partial Class frmLectores
         Me.txtObservaciones.Multiline = True
         Me.txtObservaciones.Name = "txtObservaciones"
         Me.txtObservaciones.Size = New System.Drawing.Size(373, 60)
-        Me.txtObservaciones.TabIndex = 1
+        Me.txtObservaciones.TabIndex = 5
         '
         'lblObservaciones
         '
@@ -224,7 +224,7 @@ Partial Class frmLectores
         Me.txtDireccion.Multiline = True
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(373, 60)
-        Me.txtDireccion.TabIndex = 1
+        Me.txtDireccion.TabIndex = 4
         '
         'lblDireccion
         '
@@ -242,7 +242,7 @@ Partial Class frmLectores
         Me.txtTelefono.Location = New System.Drawing.Point(148, 98)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(373, 26)
-        Me.txtTelefono.TabIndex = 1
+        Me.txtTelefono.TabIndex = 3
         '
         'lblTelefono
         '
@@ -260,7 +260,7 @@ Partial Class frmLectores
         Me.txtNombre.Location = New System.Drawing.Point(148, 58)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(373, 26)
-        Me.txtNombre.TabIndex = 1
+        Me.txtNombre.TabIndex = 2
         '
         'lblNombre
         '
