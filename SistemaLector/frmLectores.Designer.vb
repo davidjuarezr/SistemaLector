@@ -300,7 +300,6 @@ Partial Class frmLectores
         Me.dataLectores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dataLectores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dataLectores.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dataLectores.EnableHeadersVisualStyles = False
         Me.dataLectores.Location = New System.Drawing.Point(0, 0)
         Me.dataLectores.Name = "dataLectores"
         Me.dataLectores.RowHeadersVisible = False

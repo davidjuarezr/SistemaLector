@@ -57,7 +57,7 @@ Public Class frmLectores
 
                 panelDatos.Visible = False
                 Limpiar()
-
+                Mostrar()
             Catch ex As Exception
 
             End Try
@@ -73,6 +73,42 @@ Public Class frmLectores
         txtDireccion.Clear()
         txtObservaciones.Clear()
         txtIdentidad.Focus()
+    End Sub
+
+    Private Sub Mostrar()
+        Dim dt As New DataTable
+        Dim da As New SqlDataAdapter
+
+        Try
+            Abrir_conexion()
+            da = New SqlDataAdapter("Mostrar_Lector", conexion)
+            da.Fill(dt)
+            dataLectores.DataSource = dt
+            Cerrar_conexion()
+
+            'cambiar ancho de las columnas(encabezados)
+            dataLectores.Columns(0).Width = 180
+            dataLectores.Columns(1).Width = 250
+            dataLectores.Columns(2).Width = 100
+            dataLectores.Columns(3).Width = 300
+            dataLectores.Columns(4).Width = 300
+
+            'Cambiar apariencia de los encabezados
+            dataLectores.EnableHeadersVisualStyles = False
+            Dim estilo As DataGridViewCellStyle = New DataGridViewCellStyle()
+
+            estilo.BackColor = Color.White
+            estilo.ForeColor = Color.Black
+            estilo.Font = New Font("Segoe UI", 10, FontStyle.Regular Or FontStyle.Bold)
+            dataLectores.ColumnHeadersDefaultCellStyle = estilo
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub frmLectores_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Mostrar()
     End Sub
 
     '<a href = "https://www.flaticon.es/iconos-gratis/buscar" title="buscar iconos">Buscar iconos creados por inkubators - Flaticon</a>
